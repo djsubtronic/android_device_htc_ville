@@ -34,6 +34,9 @@ on emmc-fs
     exec /system/bin/sh /system/etc/init.qcom.radio_links.sh
     exec /system/bin/sh /system/etc/init.qcom.wcnss_links.sh
 
+    setprop ro.product.wireless WCN3660
+    exec /system/bin/sh /system/etc/init.qcom.wifi.sh
+
 on post-fs-data
     # double check perms and set owner
     chown root root /devlog
@@ -200,9 +203,6 @@ service qcom-post-boot /system/bin/sh /system/etc/init.qcom.post_boot.sh
 
 service qcom-sh /system/bin/sh /init.qcom.sh
     user root
-    oneshot
-
-service qcom-wifi /system/bin/sh /system/etc/init.qcom.wifi.sh
     oneshot
 
 service qmuxd /system/bin/qmuxd
