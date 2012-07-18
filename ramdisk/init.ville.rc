@@ -148,6 +148,7 @@ service abld /system/bin/mm-abl-daemon
     disabled
 
 service akmd /system/bin/akmd
+    class main
     user compass
     group compass misc input
 
@@ -159,6 +160,7 @@ service dhcpcd_wlan0 /system/bin/dhcpcd -ABKLG
     oneshot
 
 service ewtzmud /system/bin/ewtzmud
+    class main
     user system
     group system misc input
 
@@ -187,8 +189,10 @@ service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
     disabled
 
 service netmgrd /system/bin/netmgrd
+    class main
 
 service qcamerasvr /system/bin/mm-qcamera-daemon
+    class main
     user system
     group system camera inet
 
@@ -205,6 +209,7 @@ service qcom-wifi /system/bin/sh /system/etc/init.qcom.wifi.sh
     oneshot
 
 service qmuxd /system/bin/qmuxd
+    class main
     user radio
     group radio
 
